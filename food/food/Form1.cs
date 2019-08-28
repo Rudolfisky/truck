@@ -16,5 +16,10 @@ namespace food
         {
             InitializeComponent();
         }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }
