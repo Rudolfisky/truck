@@ -38,7 +38,7 @@ namespace food
             System.Diagnostics.Debug.WriteLine("test");
         }
 
-        private void refresh_Click(object sender, EventArgs e)
+        private void Refresh_Click(object sender, EventArgs e)
         {
             try
             {
@@ -56,6 +56,11 @@ namespace food
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void del_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
