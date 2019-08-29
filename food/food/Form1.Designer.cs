@@ -33,6 +33,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.refresh = new System.Windows.Forms.Button();
             this.del = new System.Windows.Forms.Button();
+            this.upload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,7 +67,7 @@
             // 
             // del
             // 
-            this.del.Location = new System.Drawing.Point(119, 12);
+            this.del.Location = new System.Drawing.Point(227, 12);
             this.del.Name = "del";
             this.del.Size = new System.Drawing.Size(101, 42);
             this.del.TabIndex = 3;
@@ -74,11 +75,22 @@
             this.del.UseVisualStyleBackColor = true;
             this.del.Click += new System.EventHandler(this.del_Click);
             // 
+            // upload
+            // 
+            this.upload.Location = new System.Drawing.Point(120, 12);
+            this.upload.Name = "upload";
+            this.upload.Size = new System.Drawing.Size(101, 42);
+            this.upload.TabIndex = 4;
+            this.upload.Text = "upload";
+            this.upload.UseVisualStyleBackColor = true;
+            this.upload.Click += new System.EventHandler(this.upload_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(641, 368);
+            this.Controls.Add(this.upload);
             this.Controls.Add(this.del);
             this.Controls.Add(this.refresh);
             this.Controls.Add(this.dataGridView1);
@@ -94,6 +106,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button refresh;
         private System.Windows.Forms.Button del;
+        private System.Windows.Forms.Button upload;
     }
 }
 

@@ -62,5 +62,10 @@ namespace food
         {
 
         }
+
+        private void upload_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
