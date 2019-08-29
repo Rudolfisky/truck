@@ -16,10 +16,8 @@ namespace food
         public Form1()
         {
             InitializeComponent();
-                        try
+            try
             {
-                //MySqlConnection connection = new MySqlConnection("data=localhost;port=3306;username=root;password=");
-                //MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM eet_wagen.product", connection);
                 MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=");
                 MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM eet_wagen.product", connection);
 
@@ -38,6 +36,26 @@ namespace food
         private void contextMenuStrip1_Opening(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("test");
+        }
+
+        private void refresh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=");
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM eet_wagen.product", connection);
+
+                connection.Open();
+
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "product");
+                dataGridView1.DataSource = ds.Tables["product"];
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
