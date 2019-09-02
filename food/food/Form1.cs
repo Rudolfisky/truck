@@ -37,10 +37,15 @@ namespace food
                 connection.Open();
 
                 adapter.Fill(LocalDS, "product");
-                System.Diagnostics.Debug.WriteLine(LocalDS);
-                dataGridView1.DataSource = LocalDS.Tables["product"];
 
                 connection.Close();
+
+                System.Diagnostics.Debug.WriteLine(LocalDS);
+                dataGridView1.DataSource = LocalDS.Tables[0];
+                dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
+                DataView dv = new DataView(LocalDS.Tables[0], "categorie = 'snack' ", "categorie", DataViewRowState.CurrentRows);
+                dataGridView1.DataSource = dv;
+
             }
             catch (Exception ex)
             {
